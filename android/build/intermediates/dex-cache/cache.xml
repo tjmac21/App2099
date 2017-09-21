@@ -3,48 +3,66 @@
 
     <item
         is-multidex="false"
-        jar="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline\1.3.0\jars\classes.jar"
+        jar="C:\Users\mact__000\Desktop\projects\App2099\node_modules\react-native-fbsdk\android\build\intermediates\bundles\default\classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.1"
+        revision="25.0.0"
+        sha1="41f3d13c9c5e9095a9665594fd8ddb39eede1452">
+        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\classes_131be23781211f3c96f190ea35554ec2f9ccce36.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\mact__000\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-applinks\1.4.0\8ad21bf21784dacce5f2043afb97218cc377e835\bolts-applinks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\bolts-applinks-1.4.0_c8243215660aca706fe32b09b0cf8782d29632b4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\mact__000\.android\build-cache\aa61c705347767a93ceb7185328914afacfda612\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\classes_d35e65b0ad7bb79455783df9dc41751a9a6b2bdf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\mact__000\.android\build-cache\1e145019017566f00a21676c43c15d5053c422d1\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\classes_77e41829c5811d9d9df49539bb833426b56540c4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\mact__000\.android\build-cache\c955309e1e17242395203ba653f8ab1143153aad\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
         sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
-        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-1.3.0_fe5006995d2b8dbf1ff32cc4544d12f049416d95.jar" />
+        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\classes_599c18f3f44405790d99097c03033aed842966e1.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
+        jar="C:\Users\mact__000\.android\build-cache\95c9d1a2134c26b5d2cb0fb7e902f56859f449fb\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.1"
-        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1_230ed566e683546b018de312ec9b413753ef6927.jar" />
+        revision="25.0.0"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\classes_f49fca70361aabe36f3a597e1aacc317ca5b92ae.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\exploded-aar\com.facebook.soloader\soloader\0.1.0\jars\classes.jar"
+        jar="C:\Users\mact__000\.android\build-cache\5b90cfe85c6f81c3bbfbaf5c3bfa8a48a31b1504\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.1"
-        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
-        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\com.facebook.soloader-soloader-0.1.0_13afec6e9a503aa0e076e439be1da55e364a05bc.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-okhttp3\1.3.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
+        revision="25.0.0"
         sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
-        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-okhttp3-1.3.0_c3a550451e3dd0210b7536a247a2e25f510604fa.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-base\1.3.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
-        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-base-1.3.0_a31d34ad454b749d605339ca3c2d6ef3a310199c.jar" />
+        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\classes_ab6467dcc1b1b040865cf361882472ad3bc7ef7e.jar" />
     </item>
     <item
         is-multidex="false"
@@ -57,12 +75,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.48.3\jars\classes.jar"
+        jar="C:\Users\mact__000\.android\build-cache\3440384d3abfff2fcfd662a708da40baef195b60\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.1"
-        sha1="56d3e81fee5f47a7a12ab65f4620f580c9c71d1e">
-        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\com.facebook.react-react-native-0.48.3_849f1dd37f32c6b2d55b352e8d3a2b992f1f3885.jar" />
+        revision="25.0.0"
+        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
+        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\classes_54e1c3053416f4ba95e17189c7050ef3f6ebf7b7.jar" />
     </item>
     <item
         is-multidex="false"
@@ -75,21 +93,30 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
+        jar="C:\Users\mact__000\.gradle\caches\modules-2\files-2.1\com.google.zxing\core\3.3.0\73c49077166faa4c3c0059c5f583d1d7bd1475fe\core-3.3.0.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.0.1_3b33bd810421bf646f7602a0071e3a7f0bb98f61.jar" />
+        revision="25.0.0"
+        sha1="73c49077166faa4c3c0059c5f583d1d7bd1475fe">
+        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\core-3.3.0_0eda761075fbdd8e898f82ed5a333d2b9ef6a491.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\mact__000\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jar="C:\Users\mact__000\.android\build-cache\42f935b4fc120445557efa414e77fbb691883c71\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.1"
-        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_a09b6a844831379f7b95dfd8a80464969f2a5b3f.jar" />
+        revision="25.0.0"
+        sha1="e09663005d70dcedff0bb77211b9ac52d8b69421">
+        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\classes_842b6e7fbbbbf928fd8b9fc773ecc6329ff161b7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\mact__000\.android\build-cache\812602cd9a918311505e76903df7e5f07480bf0d\output\jars\libs\infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\infer-annotations-4.0_c5aa284ec6e7795cf56767893c50bc1a1e61c0f7.jar" />
     </item>
     <item
         is-multidex="false"
@@ -102,24 +129,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\1.3.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
-        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fbcore-1.3.0_0626b45837ed825b6ad93587a353119a901d6c98.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\exploded-aar\com.facebook.fresco\drawee\1.3.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
-        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-drawee-1.3.0_9ff7028829e9f1e3b46e5f8d1fd9645b4e35af03.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\Users\mact__000\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.0\5871fb60dc68d67da54a663c3fd636a10a532948\jsr305-3.0.0.jar"
         jumboMode="false"
         optimize="true"
@@ -129,48 +138,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\mact__000\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
+        jar="C:\Users\mact__000\.android\build-cache\d1f9f5347ab1c35199a48044f1facc91887885f0\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.1"
-        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1_a6c400275d479eb43d4c1161265cb5aae2f5a14d.jar" />
+        revision="25.0.0"
+        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
+        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\classes_22413606746f75c99a0cdbbf6f3963374f07b072.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
+        jar="C:\Users\mact__000\.android\build-cache\1a9a91fbb1c520bcd77508b728ed3b08225d77dd\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.1"
-        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
-        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.0.1_0f5e62b196b6395cb2a1c56130741fa3a52edb67.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\exploded-aar\com.facebook.fbui.textlayoutbuilder\textlayoutbuilder\1.0.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
-        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_ab7bd6d0f6e7fadb3de4a414f83c1f7e45e0d1ff.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\exploded-aar\com.facebook.fresco\fresco\1.3.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
-        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fresco-1.3.0_3c56c4ebc51943ac039aaf0bf9a84f470a6fc11c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\mact__000\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.6.0\69edde9fc4b01c9fd51d25b83428837478c27254\okhttp-3.6.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
-        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\okhttp-3.6.0_f1d03f18ec5f7e12aee99e6e8ee5a20d7b3578ea.jar" />
+        revision="25.0.0"
+        sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
+        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\classes_5fa2730f2ad0c1699456e8b515adcb7656b13365.jar" />
     </item>
     <item
         is-multidex="false"
@@ -183,12 +165,120 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.48.3\jars\libs\infer-annotations-4.0.jar"
+        jar="C:\Users\mact__000\.android\build-cache\5e0ccfdaf2e54ff16a9dde260b6e712ee8ba1d3e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\classes_ccff490d769a410993bd73c71822d01790aacb8d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\mact__000\.android\build-cache\812602cd9a918311505e76903df7e5f07480bf0d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="56d3e81fee5f47a7a12ab65f4620f580c9c71d1e">
+        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\classes_dcf446158c5f647ad58361f4bd21a620f74da0f3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\mact__000\.android\build-cache\1edb2d97eca0a3debd46bc12db21cfc8d7f81c5f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="807751a24cf96566fd8675517c94d8463cf364db">
+        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\classes_1b784555658bf58b1d55af7315a72001b06ebd84.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\mact__000\.android\build-cache\1ecf18d1169fb5816ee2d646266bc811df2bf3e2\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
+        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\classes_048ff17476b1c20ec3b40b5b47c39b110adbe9a6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\mact__000\.android\build-cache\9f5f22d139a2a3e218020fb5cdda7608287f2bf4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\classes_6bf2db16a77f7b1eb3ca371aba4ed62b360dcfcb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\mact__000\.android\build-cache\094bff6b744e05b1ab082f6083ed197ad06ee2b6\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
+        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\classes_42d049415b2c5b1e6f50f8b26d21eff239232ce3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\mact__000\.android\build-cache\8c4bed6c60949e4c3be1487114c7faf0a846f682\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\classes_49c87ce447296395c5a40dac20aee9deb1c9d7c2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\mact__000\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_9152deddd9237b26c1c765004a8d89886d43bbbb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\mact__000\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
-        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\infer-annotations-4.0_5c9fa83307788e79c275e5c61280130ddcf65eaa.jar" />
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_a09b6a844831379f7b95dfd8a80464969f2a5b3f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\mact__000\.android\build-cache\a3b01ec7f260269e656877c508d5a2a7569e8548\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\classes_d02b169c63a8ac2a4a4c8b5361f51ab772bf6c47.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\mact__000\.android\build-cache\c44ea82ecae3fb1065b49f3ebb9b614f1148cfc4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\classes_cab83700f1a2c095da414c6c5322138d308ad966.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\mact__000\.android\build-cache\cad795fc5b457415320b0163069efc7506deeeca\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\classes_8ed4fbbb83de184e08ecd84e86b3ff772db095b8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\mact__000\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.6.0\69edde9fc4b01c9fd51d25b83428837478c27254\okhttp-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
+        <dex dex="C:\Users\mact__000\Desktop\projects\App2099\android\app\build\intermediates\pre-dexed\debug\okhttp-3.6.0_f1d03f18ec5f7e12aee99e6e8ee5a20d7b3578ea.jar" />
     </item>
 
 </items>
