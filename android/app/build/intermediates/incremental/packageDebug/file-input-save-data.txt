@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Sep 21 02:16:31 PDT 2017
+#Thu Sep 21 03:29:36 PDT 2017
 20.base=C\:\\Users\\mact__000\\Desktop\\projects\\App2099\\android\\app\\build\\intermediates\\res\\resources-debug.ap_
 143.base=C\:\\Users\\mact__000\\Desktop\\projects\\App2099\\android\\app\\build\\intermediates\\res\\resources-debug.ap_
 493.base=C\:\\Users\\mact__000\\Desktop\\projects\\App2099\\android\\app\\build\\intermediates\\transforms\\stripDebugSymbol\\debug\\folders\\2000\\1f\\main

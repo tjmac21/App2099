@@ -6,7 +6,9 @@ import {
   StyleSheet,
   Text,
   View,
+  TouchableOpacity,
 } from 'react-native';
+import FbLoginButton from './src/components/FbLoginButton';
 
 export default class App2099 extends Component {
   constructor(props) {
@@ -15,12 +17,11 @@ export default class App2099 extends Component {
       loaded: false,
     };
   }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text>
-          Loading...
-        </Text>
+          <FbLoginButton />
       </View>
     );
   }
