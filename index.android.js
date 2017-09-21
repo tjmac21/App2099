@@ -16,14 +16,12 @@ export default class App2099 extends Component {
     };
   }
   render() {
-    if (!this.state.loaded) {
-      return this.renderLoadingView();
-    }
-
     return (
-      <Text>
-       hi...
-    </Text>
+      <View style={styles.container}>
+        <Text>
+          Loading...
+        </Text>
+      </View>
     );
   }
 
