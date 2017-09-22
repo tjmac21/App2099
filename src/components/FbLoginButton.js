@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import {
-  AppRegistry,
-  Image,
-  ListView,
   StyleSheet,
   Text,
   View,
-  TouchableOpacity,
+  Button,
 } from 'react-native';
 import FBSDK, { LoginManager, AccessToken } from 'react-native-fbsdk';
 import firebase from 'firebase';
@@ -21,14 +18,11 @@ const firebaseRef =  firebase.initializeApp(config);
 
 class FbLoginButton extends Component {
   constructor(props) {
-    super(props);
-    this.state = {
-      loaded: false,
-    };
+    super();
   }
   
   _fbAuth() {
-    LoginManager.logInWithReadPermissions(['public_profile', 'email']).then(
+    LoginManager.logInWithReadPermissions(['public_profile', 'email','user_friends']).then(
       function(result) {
         if (result.isCancelled) {
           alert('Login was cancelled');
@@ -48,24 +42,17 @@ class FbLoginButton extends Component {
       }, function(error) {
         alert('An error occured: ' + error);
       });
+      //send to home page
     }
-    
-  renderLoadingView() {
-    return (
-      <View style={styles.container}>
-        <Text>
-          Loading Screen...
-        </Text>
-      </View>
-    );
-  }
 
   render() {
     return (
       <View style={styles.container}>
-        <TouchableOpacity onPress={this._fbAuth}>
-          <Text>Facebook</Text>
-        </TouchableOpacity>
+        <Button
+          onPress={this._fbAuth}
+          title={`${this.props.LogOrSign} With Facebook`}
+          color="#4267B2"
+        />
       </View>
     );
   }
@@ -73,8 +60,7 @@ class FbLoginButton extends Component {
 
 var styles = StyleSheet.create({
   container: {
-    flex: 1,
-    flexDirection: 'row',
+    paddingTop: 5,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',

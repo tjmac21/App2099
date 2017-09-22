@@ -8,11 +8,12 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
-import LogOrSignPage from './src/components/LogOrSignPage';
+import SplashScreen from './src/components/pages/SplashScreen';
+import LogOrSignPage from './src/components/pages/LogOrSignPage';
 
 export default class App2099 extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       loggedIn: false,
     };
@@ -32,9 +33,7 @@ export default class App2099 extends Component {
       renderLoadingView();
     } else {
       return (
-        <View>
-            <LogOrSignPage isLoggedIn={this.state.loggedIn}/>
-        </View>
+            <LogOrSignPage />
       );
     }
   }

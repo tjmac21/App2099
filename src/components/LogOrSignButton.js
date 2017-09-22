@@ -14,18 +14,18 @@ class LogOrSignButton extends Component {
   switchView(handleClick) {
     return (
         <View style={styles.container}>
-        <View style={{padding: 25, paddingTop: 0, width: 275}} ><Button
+        <View style={{padding: 25, paddingTop: 0, width: 200}} ><Button
                 title='Log In'
                 color="#841584"
                 accessibilityLabel="Tap to log in"
                 onPress={() => handleClick('Log In')}
-            /></View>
-            <View style={{padding: 25, width: 275}} ><Button
+            /></View>{/*css animation to move down*/}
+            <View style={{padding: 25, width: 200}} ><Button
                 title='Sign Up'
                 color="#FFA400"
                 accessibilityLabel="Tap to sign up"
                 onPress={() => handleClick('Sign Up')}
-            /></View>
+            /></View>{/*css animation to move down*/}
         </View>
     );
   }
