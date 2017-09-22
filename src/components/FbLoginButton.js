@@ -49,23 +49,23 @@ class FbLoginButton extends Component {
         alert('An error occured: ' + error);
       });
     }
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <TouchableOpacity onPress={this._fbAuth()}>
-          <Text>Facebook</Text>
-        </TouchableOpacity>
-      </View>
-    );
-  }
-
+    
   renderLoadingView() {
     return (
       <View style={styles.container}>
         <Text>
           Loading Screen...
         </Text>
+      </View>
+    );
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <TouchableOpacity onPress={this._fbAuth}>
+          <Text>Facebook</Text>
+        </TouchableOpacity>
       </View>
     );
   }

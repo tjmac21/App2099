@@ -1,4 +1,4 @@
-#Thu Sep 21 03:29:35 PDT 2017
+#Thu Sep 21 19:43:59 PDT 2017
 base.0=C\:\\Users\\mact__000\\Desktop\\projects\\App2099\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
 file.0=C\:\\Users\\mact__000\\Desktop\\projects\\App2099\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

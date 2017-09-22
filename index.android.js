@@ -8,32 +8,35 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
-import FbLoginButton from './src/components/FbLoginButton';
+import LogOrSignPage from './src/components/LogOrSignPage';
 
 export default class App2099 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loaded: false,
+      loggedIn: false,
     };
   }
+    renderLoadingView() {
+      return (
+        <View style={styles.container}>
+          <Text>
+            Logged In...
+          </Text>
+        </View>
+      );
+    }
 
   render() {
-    return (
-      <View style={styles.container}>
-          <FbLoginButton />
-      </View>
-    );
-  }
-
-  renderLoadingView() {
-    return (
-      <View style={styles.container}>
-        <Text>
-          Loading Screen...
-        </Text>
-      </View>
-    );
+    if (this.state.loggedIn){
+      renderLoadingView();
+    } else {
+      return (
+        <View>
+            <LogOrSignPage isLoggedIn={this.state.loggedIn}/>
+        </View>
+      );
+    }
   }
 }
 
