@@ -55,7 +55,6 @@ class SignupForm extends Component {
 
 var styles = StyleSheet.create({
     container: {
-        top: 75,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#F5FCFF',

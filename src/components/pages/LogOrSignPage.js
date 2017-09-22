@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {
   Button,
   Image, 
-  Animated, 
   Keyboard,
   StyleSheet,
   Text,
@@ -29,8 +28,8 @@ class LogOrSign extends Component {
             currentScreen: 'main',
         };
         this.updateScreen = this.updateScreen.bind(this);
-        this.keyboardHeight = new Animated.Value(0);
-        this.imageHeight = new Animated.Value(60);
+        
+        this.padding = 100;
     }
         
     componentWillMount () {
@@ -39,42 +38,10 @@ class LogOrSign extends Component {
         //update state
         this.setState({loggedIn: log});
             
-        this.keyboardWillShowSub = Keyboard.addListener('keyboardWillShow', this.keyboardWillShow);
-        this.keyboardWillHideSub = Keyboard.addListener('keyboardWillHide', this.keyboardWillHide);
     }
-        
-    componentWillUnmount() {
-        this.keyboardWillShowSub.remove();
-        this.keyboardWillHideSub.remove();
-    }
-        
-    keyboardWillShow = (event) => {
-        Animated.parallel([
-            Animated.timing(this.keyboardHeight, {
-            duration: event.duration,
-            toValue: event.endCoordinates.height,
-            }),
-            Animated.timing(this.imageHeight, {
-            duration: event.duration,
-            toValue: 30,
-            }),
-        ]).start();
-    };
-    
-    keyboardWillHide = (event) => {
-        Animated.parallel([
-            Animated.timing(this.keyboardHeight, {
-            duration: event.duration,
-            toValue: 0,
-            }),
-            Animated.timing(this.imageHeight, {
-            duration: event.duration,
-            toValue: 60,
-            }),
-        ]).start();
-    };
 
     updateScreen(newScreen) {
+        this.padding = 60;
         let screen = this.state.currentScreen;
         screen = newScreen;
         this.setState({
@@ -84,11 +51,11 @@ class LogOrSign extends Component {
     
     render(){
         return (
-            <Animated.View style={{ top: 60, alignItems: 'center', justifyContent: 'center', paddingBottom: this.keyboardHeight }}>
-                <Animated.Image
+            <View style={{ top: this.padding, alignItems: 'center', justifyContent: 'center'}}>
+                <View style={{paddingBottom: this.padding}}><Image
                     source={require('../../img/favicon.png')}
-                    style={[styles.logo, { height: this.imageHeight }]}
-                />
+                    style={[styles.logo, { height: 60 }]}
+                /></View>
                 {this.state.currentScreen === 'main' ? (
                     <LogOrSignButton handleClick={this.updateScreen.bind(this)} />
                   ) : this.state.currentScreen === 'Log In' ? (
@@ -96,7 +63,7 @@ class LogOrSign extends Component {
                   ) : this.state.currentScreen === 'Sign Up' ? (
                     <SignupForm />
                   ) : null}
-            </Animated.View>
+            </View>
         );
     }
 }
