@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import SplashScreen from './src/components/pages/SplashScreen';
 import LogOrSignPage from './src/components/pages/LogOrSignPage';
+import MapTest from './src/components/MapTest';
 
 export default class App2099 extends Component {
   constructor() {
@@ -33,7 +34,8 @@ export default class App2099 extends Component {
       renderLoadingView();
     } else {
       return (
-            <LogOrSignPage />
+            <MapTest />
+
       );
     }
   }
