@@ -34,7 +34,7 @@ export default class App2099 extends Component {
       renderLoadingView();
     } else {
       return (
-            <MapTest />
+            <LogOrSignPage />
 
       );
     }

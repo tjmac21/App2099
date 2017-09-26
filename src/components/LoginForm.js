@@ -19,13 +19,26 @@ class LoginForm extends Component {
             pwText: '',
         };
     }
+    handleEmailChange(e) {
+        // take a copy of the fish and update it with new data
+        let emailText = this.state.emailText;
+        emailText = e.target.value;;
+        this.setState({ emailText })
+    } 
+    handlePassChange(e) {
+        // take a copy of the fish and update it with new data
+        let pwText = this.state.pwText;
+        pwText = e.target.value;;
+        this.setState({ pwText })
+    } 
     render(){
+        const { emailText, pwText } = this.state;
         return (
             <View style={styles.container} >
                 <View style={{padding: 10, paddingTop: 0, }} ><TextInput
                     style={{width: 250, height: 40, padding:10, borderColor: 'grey', borderWidth: 1}}
-                    onChangeText={(text) => this.setState({text})}
-                    value={this.state.emailText}
+                    onChange={(e) => this.handleEmailChange(e)}
+                    value={emailText}
                     placeholder="Email"
                     keyboardType='email-address'
                     clearButtonMode='unless-editing'
@@ -35,8 +48,8 @@ class LoginForm extends Component {
                 /></View>
                 <View style={{padding: 10, paddingTop: 0, }} ><TextInput
                     style={{width: 250, height: 40, padding:10, borderColor: 'grey', borderWidth: 1}}
-                    onChangeText={(text) => this.setState({text})}
-                    value={this.state.pwText}
+                    onChange={(e) => this.handlePassChange(e)}
+                    value={pwText}
                     placeholder="Password"
                     secureTextEntry={true}
                     clearButtonMode='unless-editing'
