@@ -1,30 +1,41 @@
 import React from 'react';
 import { TabNavigator, StackNavigator } from 'react-navigation';
+import MapTest from '../components/MapTest';
+import SplashScreen from '../components/pages/SplashScreen';
+import LogOrSignPage from '../components/pages/LogOrSignPage';
 
-
-export const LoginStack = StackNavigator({
-    LogOrSignButton: {
-      screen: LogOrSignButton,
+export const Home = StackNavigator({
+    SplashScreen: {
+      screen: SplashScreen,
       navigationOptions: {
-        title: 'Feed',
+        title: 'Map',
       },
     },
-    LoginForm: {
-      screen: LoginForm,
+    MapTest: {
+      screen: MapTest,
       navigationOptions: {
-        title: 'Feed',
-      },
-    },
-    ForgotPassword: {
-      screen: ForgotPassword,
-      navigationOptions: {
-        title: 'Feed',
-      },
-    },
-    ConfirmationForm: {
-      screen: ConfirmationForm,
-      navigationOptions: {
-        title: 'Feed',
+        title: 'Map',
       },
     },
   });
+
+export const LoginFlow = StackNavigator({
+    LogOrSignPage: {
+      screen: LogOrSignPage,
+      navigationOptions: {
+        title: 'Map',
+      },
+    },
+});
+
+export const Root = StackNavigator({
+  Home: {
+    screen: Home,
+  },
+  LoginFlow: {
+    screen: LoginFlow,
+  },
+}, {
+  mode: 'card',
+  headerMode: 'none',
+});

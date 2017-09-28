@@ -16,6 +16,10 @@ import ConfirmationForm from '../ConfirmationForm';
 import BackButton from '../BackButton';
 
 class LogOrSign extends Component {
+    static navigationOptions = {
+        header:  null,
+    }
+
     constructor(){
         super();    
         this.state = {
@@ -23,6 +27,10 @@ class LogOrSign extends Component {
             screenStack: ['Main'],
         };
         this.updateScreen = this.updateScreen.bind(this);
+    }
+
+    componentWillMount(){
+        
     }
 
     updateScreen(newScreen) {

@@ -6,7 +6,10 @@ import {
 } from 'react-native';
 import LogOrSignPage from './LogOrSignPage';
 
-class SplashScreen extends Component {
+class SplashScreen extends Component {  
+    static navigationOptions = {
+        header:  null,
+    }
     constructor() {
       super();
       this.state = {
