@@ -30,7 +30,14 @@ class LoginForm extends Component {
         let pwText = this.state.pwText;
         pwText = e.target.value;;
         this.setState({ pwText })
-    } 
+    }       
+    forgotPassword(event){
+        event.preventDefault();
+        this.props.updateScreen('Forgot Password');
+    }  
+    goHome(){
+        
+    }
     render(){
         const { emailText, pwText } = this.state;
         return (
@@ -61,10 +68,11 @@ class LoginForm extends Component {
                     title='Log In'
                     color="#841584"
                     accessibilityLabel="Tap to log in"
+                    onPress={this.goHome.bind(this)}
                 />{/*send to homescreen onPress*/}</View>
                 <View style={{padding: 10, paddingTop: 0, }} ><Text>OR</Text></View>
                 <FbLoginButton LogOrSign={'Log In'}/>
-                <View style={{padding: 60}} ><TouchableOpacity>{/*onPress=send to new form*/}
+                <View style={{padding: 60}} ><TouchableOpacity onPress={this.forgotPassword.bind(this)}>{/*onPress=send to new form*/}
                     <Text>Forgot password?</Text>
                 </TouchableOpacity></View>
             </View>
