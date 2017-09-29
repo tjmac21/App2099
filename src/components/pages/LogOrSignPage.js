@@ -64,10 +64,11 @@ class LogOrSign extends Component {
                     ) : null
                 }
                 </View>
-                <View style={{top: 80, alignItems: 'center', justifyContent: 'center'}}>
-                    <View style={{paddingBottom: 80}}><Image
+                <View style={{top: 40, alignItems: 'center', justifyContent: 'center'}}>
+                    <View style={{paddingBottom: 40}}><Image
+                        resizeMode='contain'
                         source={require('../../img/favicon.png')}
-                        style={{ height: 60 }}
+                        style={{ height: 150 }}
                     /></View>
                     {this.state.currentScreen === 'Main' ? (
                         <LogOrSignButton handleClick={this.updateScreen.bind(this)} navigation={this.props.navigation}/> 

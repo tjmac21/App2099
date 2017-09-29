@@ -57,6 +57,7 @@ export const NavTabs = TabNavigator({
   },
 }, {
   tabBarPosition: "bottom",
+  lazy: true, // newly added
   tabBarOptions: {
     activeTintColor: '#DB5A6B',
     inactiveTintColor: '#FFB3A7',

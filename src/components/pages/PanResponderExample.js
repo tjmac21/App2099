@@ -32,16 +32,12 @@ var PanResponderExample = React.createClass({
       onPanResponderRelease: this._handlePanResponderEnd,
       onPanResponderTerminate: this._handlePanResponderAfterEnd,
     });
-    this._initLeft = 0;
-    this._initTop = 0;
-    this._previousLeft = 0;
+    
     this._previousTop = 0;
-    this._gestureDY = 0;
-    this._gestureVY = 0;
     this._circleStyles = {
       style: {
-        left: this._previousLeft,
-        top: this._previousTop,
+        //top: this._previousTop,
+        paddingTop: this._previousTop,
         backgroundColor: 'green',
       }
     };
@@ -93,26 +89,26 @@ var PanResponderExample = React.createClass({
     this._highlight();
   },
   _handlePanResponderMove: function(e: Object, gestureState: Object) {
-    this._gestureDY = gestureState.dy;
-    this._circleStyles.style.top = this._previousTop + this._gestureDY;
+    this._circleStyles.style.top = this._previousTop + gestureState.dy;
     this._updateNativeStyles();
   },
   _handlePanResponderEnd: function(e: Object, gestureState: Object) {
     this._unHighlight();
-    this._previousTop += gestureState.dy;
+    this._previousTop += gestureState.dy;    
     this._updateNativeStyles();
   },
 });
 
 var styles = StyleSheet.create({
   circle: {
-    width: 1000,
-    height: CIRCLE_SIZE,
-    borderBottomLeftRadius: 10,
-    borderBottomRightRadius: 10,
+    width: 200,
+    height: 80,
+    borderBottomLeftRadius: 25,
+    borderBottomRightRadius: 25,
     position: 'absolute',
-    left: 0,
-    top: 0,
+    backgroundColor: 'red',
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
   container: {
     flex: 1,

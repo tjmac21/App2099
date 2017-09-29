@@ -15,6 +15,8 @@ export default class CreateMessage extends Component {
       };
   }
   handleClick(){
+    this.state.bounceValue.setValue(1);     // Start large
+    this.doBounce();
     alert('Make card that slides up for a message');
   }
   render() {
@@ -23,16 +25,27 @@ export default class CreateMessage extends Component {
             <Animated.Image 
                 source={require('../../img/pencil_icon.png')} 
                 resizeMode='contain'
-                style={{margin: 15, height: 15, width: 15, padding: 15, flex: 1,
+                style={
+                  {margin: 15, height: 15, width: 15, padding: 15, flex: 1,
                   transform: [                        // `transform` is an ordered array
                     {scale: this.state.bounceValue},  // Map `bounceValue` to `scale`
-                  ],}}
+                  ],}
+                }
             />
         </TouchableOpacity>
     );
   }
   componentDidMount() {
     this.state.bounceValue.setValue(1.5);     // Start large
+    this.doBounce();
+  }
+  componentWillUpdate(newProps,newState){
+    if(newProps){
+      this.state.bounceValue.setValue(1.5);
+      this.doBounce();
+    }
+  }
+  doBounce(){
     Animated.spring(                          // Base: spring, decay, timing
       this.state.bounceValue,                 // Animate `bounceValue`
       {
