@@ -8,9 +8,6 @@ import {
     TouchableOpacity,
 } from 'react-native';
 import { Home, Root, LoginFlow } from './config/router';
-import SplashScreen from './components/pages/SplashScreen';
-import LogOrSignPage from './components/pages/LogOrSignPage';
-import MapTest from './components/MapTest';
 
 class App extends Component {
   constructor() {
@@ -21,25 +18,10 @@ class App extends Component {
   }
 
   render() {
-    if (this.state.loggedIn){
-      renderLoadingView();
-    } else {
       return (
-            <LoginFlow />
-
+            <Root />
       );
-    }
   }
 }
-
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-});
 
 export default App;

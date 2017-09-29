@@ -1,0 +1,44 @@
+import React, { Component } from 'react';
+import {
+  Animated,
+  Image, 
+  StyleSheet,
+  View,
+  TouchableOpacity,
+} from 'react-native';
+
+export default class CreateMessage extends Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+        bounceValue: new Animated.Value(0),
+      };
+  }
+  handleClick(){
+    alert('Make card that slides up for a message');
+  }
+  render() {
+    return (
+        <TouchableOpacity onPress={() => this.handleClick()}>          
+            <Animated.Image 
+                source={require('../../img/pencil_icon.png')} 
+                resizeMode='contain'
+                style={{margin: 15, height: 15, width: 15, padding: 15, flex: 1,
+                  transform: [                        // `transform` is an ordered array
+                    {scale: this.state.bounceValue},  // Map `bounceValue` to `scale`
+                  ],}}
+            />
+        </TouchableOpacity>
+    );
+  }
+  componentDidMount() {
+    this.state.bounceValue.setValue(1.5);     // Start large
+    Animated.spring(                          // Base: spring, decay, timing
+      this.state.bounceValue,                 // Animate `bounceValue`
+      {
+        toValue: 0.9,                         // Animate to smaller size
+        friction: 0.4,                          // Bouncier spring
+      }
+    ).start();                                // Start the animation
+  }
+}

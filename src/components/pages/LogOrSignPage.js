@@ -7,13 +7,14 @@ import {
   StyleSheet,
   Text,
   View,
+  StatusBar,
 } from 'react-native';
-import LogOrSignButton from '../LogOrSignButton';
-import LoginForm from '../LoginForm';
-import SignupForm from '../SignupForm';
-import ForgotPassword from './ForgotPassword';
-import ConfirmationForm from '../ConfirmationForm';
-import BackButton from '../BackButton';
+import LogOrSignButton from '../login/LogOrSignButton';
+import LoginForm from '../login/LoginForm';
+import SignupForm from '../login/SignupForm';
+import ForgotPassword from '../login/ForgotPassword';
+import ConfirmationForm from '../login/ConfirmationForm';
+import BackButton from '../login/BackButton';
 
 class LogOrSign extends Component {
     static navigationOptions = {
@@ -27,10 +28,6 @@ class LogOrSign extends Component {
             screenStack: ['Main'],
         };
         this.updateScreen = this.updateScreen.bind(this);
-    }
-
-    componentWillMount(){
-        
     }
 
     updateScreen(newScreen) {
@@ -56,7 +53,11 @@ class LogOrSign extends Component {
     render(){
         return (
             <View>
-                <View style={{ position: 'absolute', left: 0, top: 0, margin: 20, height: 30,}}>
+                <StatusBar
+                    backgroundColor="#FFF"
+                    barStyle="dark-content"
+                />
+                <View style={{ position: 'absolute', left: 0, top: 0, margin: 15, height: 25,}}>
                 {
                     (this.state.currentScreen != 'Main') ? (
                             <BackButton screenToPop={this.state.currentScreen} updateScreen={this.updateScreen.bind(this)} />
@@ -69,15 +70,15 @@ class LogOrSign extends Component {
                         style={{ height: 60 }}
                     /></View>
                     {this.state.currentScreen === 'Main' ? (
-                        <LogOrSignButton handleClick={this.updateScreen.bind(this)} /> 
+                        <LogOrSignButton handleClick={this.updateScreen.bind(this)} navigation={this.props.navigation}/> 
                     ) : this.state.currentScreen === 'Log In' ? (
-                        <LoginForm prevScreen={this.state.currentScreen} updateScreen={this.updateScreen.bind(this)} />
+                        <LoginForm prevScreen={this.state.currentScreen} updateScreen={this.updateScreen.bind(this)} navigation={this.props.navigation}/>
                     ) : this.state.currentScreen === 'Sign Up' ? (
                         <SignupForm prevScreen={this.state.currentScreen} updateScreen={this.updateScreen.bind(this)} />
                     ) : this.state.currentScreen === 'Forgot Password' ? (
                         <ForgotPassword prevScreen={this.state.currentScreen} updateScreen={this.updateScreen.bind(this)} />
                     ) : this.state.currentScreen === 'Confirmation' ? (
-                        <ConfirmationForm prevScreen={this.state.currentScreen} updateScreen={this.updateScreen.bind(this)} />
+                        <ConfirmationForm prevScreen={this.state.currentScreen} updateScreen={this.updateScreen.bind(this)} navigation={this.props.navigation}/>
                     ) : null}
                 </View>
             </View>
