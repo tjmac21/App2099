@@ -75,7 +75,7 @@ class LogOrSign extends Component {
                     ) : this.state.currentScreen === 'Log In' ? (
                         <LoginForm prevScreen={this.state.currentScreen} updateScreen={this.updateScreen.bind(this)} navigation={this.props.navigation}/>
                     ) : this.state.currentScreen === 'Sign Up' ? (
-                        <SignupForm prevScreen={this.state.currentScreen} updateScreen={this.updateScreen.bind(this)} />
+                        <SignupForm prevScreen={this.state.currentScreen} updateScreen={this.updateScreen.bind(this)} navigation={this.props.navigation}/>
                     ) : this.state.currentScreen === 'Forgot Password' ? (
                         <ForgotPassword prevScreen={this.state.currentScreen} updateScreen={this.updateScreen.bind(this)} />
                     ) : this.state.currentScreen === 'Confirmation' ? (

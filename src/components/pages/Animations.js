@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Animated, TouchableOpacity, Text, StyleSheet } from 'react-native'
+import { AsyncStorage, View, Animated, TouchableOpacity, Text, StyleSheet } from 'react-native'
 
 class Animations extends Component {
     constructor(props) {
@@ -18,6 +18,7 @@ class Animations extends Component {
                 {scale: this.state.bounceValue},  // Map `bounceValue` to `scale`
               ]
             }}
+            onLoad={()=>(AsyncStorage.getItem('loggedIn').then((value) => alert(JSON.parse(value))))}
           />
         );
       }

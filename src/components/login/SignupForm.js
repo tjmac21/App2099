@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  AsyncStorage,
   Button,
   StyleSheet,
   Text,
@@ -7,6 +8,8 @@ import {
   View,
 } from 'react-native';
 import FbLoginButton from './FbLoginButton';
+import { goToHome } from '../../config/router';
+import * as firebase from "firebase";
 
 class SignupForm extends Component {
     constructor(){
@@ -18,72 +21,60 @@ class SignupForm extends Component {
             error: '',
         };
     }
-    handleEmailChange(e) {
-        // take a copy of the fish and update it with new data
-        let emailText = this.state.emailText;
-        emailText = e.target.value;
-        this.setState({ emailText });
-    } 
-    handlePassChange(e) {
-        // take a copy of the fish and update it with new data
-        let pwText = this.state.pwText;
-        pwText = e.target.value;
-        this.setState({ pwText });
-    }    
-    handleConfPassChange(e) {
-        // take a copy of the fish and update it with new data
-        let pwTextConfirm = this.state.pwTextConfirm;
-        pwTextConfirm = e.target.value;
-        this.setState({ pwTextConfirm });
-        passwordValidation;
-    }  
-    passwordValidation(){
-        if (this.state.pwText != this.state.pwTextConfirm) {
-            let error = this.state.error;
-            error = "Password not the same";
-            this.setState({ error });
-        } else {
-            let error = this.state.error;
-            error = "";
-            this.setState({ error });
-            // check length (min 6 chars)
-            // update screen to confirmation
-        }
-        this.props.updateScreen('Confirmation');
+
+    setLoggedIn(value) {
+        AsyncStorage.setItem('loggedIn', value);
+     }
+
+    signup() {
+            try {
+                firebase.auth()
+                    .createUserWithEmailAndPassword(this.state.emailText, this.state.pwText).then( () => {
+                        this.setLoggedIn(JSON.stringify(true));
+                        console.log("Logged In!");
+                        this.props.navigation.dispatch(goToHome);
+                    });
+        
+            } catch (error) {
+                console.log(error.toString());
+                this.setState({error});
+            }
+        
     }
+
     render(){
-        const { emailText, pwText, pwTextConfirm, error } = this.state;
+        const { email, pass, passconfirm, error } = this.state;
         return (
             <View style={styles.container} >
                 <View style={{padding: 10, paddingTop: 0, }} ><TextInput
                     style={{width: 250, height: 40, padding:10, borderColor: 'grey', borderWidth: 1}}
-                    onChange={(e) => this.handleEmailChange(e)}
-                    value={emailText}
+                    ref= {(input) => { this.emailText = input; }}
+                    onChangeText={(emailText) => this.setState({emailText})}
+                    value={email}
                     placeholder="Email"
                     keyboardType='email-address'
-                    clearButtonMode='unless-editing'
                     enablesReturnKeyAutomatically={true}
                     returnKeyType='next'
                     underlineColorAndroid='transparent'
                 /></View>
                 <View style={{padding: 10, paddingTop: 0, }} ><TextInput
                     style={{width: 250, height: 40, padding:10, borderColor: 'grey', borderWidth: 1}}
-                    onChange={(e) => this.handlePassChange(e)}
-                    value={pwText}
+                    ref= {(input) => { this.pwText = input; }}
+                    onChangeText={(pwText) => this.setState({pwText})}
+                    value={pass}
                     placeholder="Password (6-20 characters, )"
                     secureTextEntry={true}
-                    clearButtonMode='unless-editing'
                     enablesReturnKeyAutomatically={true}
                     returnKeyType='next'
                     underlineColorAndroid='transparent'
                 /></View>
                 <View style={{padding: 10, paddingTop: 0, }} ><TextInput
                     style={{width: 250, height: 40, padding:10, borderColor: 'grey', borderWidth: 1}}
-                    onChange={(e) => this.handleConfPassChange(e)}
-                    value={pwTextConfirm}
+                    ref= {(input) => { this.pwtextconfirm = input; }}
+                    onChangeText={(pwTextConfirm) => this.setState({pwTextConfirm})}
+                    value={passconfirm}
                     placeholder="Confirm Password"
                     secureTextEntry={true}
-                    clearButtonMode='unless-editing'
                     enablesReturnKeyAutomatically={true}
                     returnKeyType='next'
                     underlineColorAndroid='transparent'
@@ -93,7 +84,7 @@ class SignupForm extends Component {
                     title='Sign Up'
                     color="#FFA400"
                     accessibilityLabel="Tap to log in"
-                    onPress={this.passwordValidation.bind(this)}
+                    onPress={this.signup.bind(this)}
                 /></View>
                 <FbLoginButton LogOrSign={'Sign Up'}/>
             </View>

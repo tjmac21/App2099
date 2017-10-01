@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  AsyncStorage,
   Button,
   Image, 
   Animated, 
@@ -11,20 +12,48 @@ import {
 } from 'react-native';
 import { NavigationActions } from 'react-navigation';
 import { goToHome } from '../../config/router';
+import * as firebase from "firebase";
 
 class LogOrSignButton extends Component {
-  goHomePressed(event){
-    event.preventDefault();
-    Alert.alert(
-        'Attention:',
-        'Continuing anoynmously will result in limited functionality of the app',
-        [
-            {text: 'Cancel', onPress: () => null},
-            {text: 'Continue', onPress: () => this.props.navigation.dispatch(goToHome)},
-        ]
-    );
-    // dont forget to add firebase token to continue anoynmously
-  }
+    constructor(){
+        super();
+    }
+    setLoggedIn(value) {
+        AsyncStorage.setItem('loggedIn', value);
+    }
+    goHomePressed(event){
+        event.preventDefault();
+    
+        firebase.auth().signInAnonymously().catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // ...
+          });
+          firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+              // User is signed in.
+              var isAnonymous = user.isAnonymous;
+              var uid = user.uid;
+              setLoggedIn(JSON.stringify(true));
+              // ...
+            } else {
+              // User is signed out.
+              // ...
+            }
+            // ...
+          });
+          
+        Alert.alert(
+            'Attention:',
+            'Continuing anoynmously will result in limited functionality of the app',
+            [
+                {text: 'Cancel', onPress: () => null},
+                {text: 'Continue', onPress: () => this.props.navigation.dispatch(goToHome)},
+            ]
+        );
+        // dont forget to add firebase token to continue anoynmously
+      }
 
   render() {
     return (

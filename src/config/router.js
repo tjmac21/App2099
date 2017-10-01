@@ -4,6 +4,7 @@ import { TabNavigator, StackNavigator, NavigationActions, DrawerNavigator } from
 import MapContainer from '../components/home/MapContainer';
 import CreateMessage from '../components/home/CreateMessage';
 import SplashScreen from '../components/pages/SplashScreen';
+import Settings from '../components/pages/Settings';
 import LogOrSignPage from '../components/pages/LogOrSignPage';
 import PanResponderExample from '../components/pages/PanResponderExample';
 import Animations from '../components/pages/Animations';
@@ -12,6 +13,12 @@ export const goToHome = NavigationActions.reset({
   index: 0,
   key: null,
   actions: [NavigationActions.navigate({ routeName: 'HomeTabs' })]
+});
+
+export const goToLogin = NavigationActions.reset({
+  index: 0,
+  key: null,
+  actions: [NavigationActions.navigate({ routeName: 'LoginFlow' })]
 });
 
 export const LoginFlow = StackNavigator({
@@ -49,7 +56,7 @@ export const NavTabs = TabNavigator({
     },
   },
   Settings: {
-    screen: SplashScreen,
+    screen: Settings,
     navigationOptions: {
       tabBarLabel: 'Settings',
       // use cog icon
@@ -75,7 +82,8 @@ export const NavTabs = TabNavigator({
 });
 
 export const Root = StackNavigator({
-  LoginFlow: { screen: LoginFlow, }, //check if logged in state is true
+  Splash: { screen: SplashScreen, }, //check if logged in state is true
+  LoginFlow: { screen: LoginFlow, },
   HomeTabs: { screen: NavTabs, },
 }, {
   headerMode: null,

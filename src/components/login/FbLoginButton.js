@@ -1,27 +1,20 @@
 import React, { Component } from 'react';
 import {
+  AsyncStorage,
   StyleSheet,
   Text,
   View,
   Button,
 } from 'react-native';
 import FBSDK, { LoginManager, AccessToken } from 'react-native-fbsdk';
-import firebase from 'firebase';
-
-const config = {
-  apiKey: 'AIzaSyBbEfdE5anIq9jhTZKQYQQGSlbtkCICpe4',
-  authDomain: 'app2099-ffbce.firebaseapp.com/',
-  databaseURL: 'https://app2099-ffbce.firebaseio.com/',
-}
-
-const firebaseRef =  firebase.initializeApp(config);
+import * as firebase from "firebase";
 
 class FbLoginButton extends Component {
   constructor(props) {
     super();
   }
   
-  _fbAuth() {
+  _fbAuth() {    
     LoginManager.logInWithReadPermissions(['public_profile', 'email','user_friends']).then(
       function(result) {
         if (result.isCancelled) {
@@ -31,6 +24,7 @@ class FbLoginButton extends Component {
             const credential = firebase.auth.FacebookAuthProvider.credential(accesTokenData.accessToken)
             firebase.auth().signInWithCredential(credential).then((result) => {
               // promise was success
+              this.setLoggedIn(JSON.stringify(true));
             }, (error) => {
               //promise ws reject
               alert(error);
@@ -43,6 +37,10 @@ class FbLoginButton extends Component {
         alert('An error occured: ' + error);
       });
       //send to home page
+    }
+
+  setLoggedIn(value) {
+      AsyncStorage.setItem('loggedIn', value);
     }
 
   render() {

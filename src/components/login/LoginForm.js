@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  AsyncStorage,
   Button,
   StyleSheet,
   TextInput,
@@ -9,6 +10,7 @@ import {
 } from 'react-native';
 import FbLoginButton from './FbLoginButton';
 import { goToHome } from '../../config/router';
+import * as firebase from "firebase";
 
 class LoginForm extends Component {
     constructor(){
@@ -34,9 +36,26 @@ class LoginForm extends Component {
         event.preventDefault();
         this.props.updateScreen('Forgot Password');
     }  
+    setLoggedIn(value) {
+        AsyncStorage.setItem('loggedIn', value);
+     }
     goHome(){
+        try {
+            firebase.auth()
+                .signInWithEmailAndPassword(this.state.emailText, this.state.pwText).then( () => {
+                    this.setLoggedIn(JSON.stringify(true));
+                    console.log("Logged In!");
+                    this.props.navigation.dispatch(goToHome);
+                });
+            
+    
+    
+            // Navigate to the Home page
+    
+        } catch (error) {
+            console.log(error.toString());
+        }
         //verify login information
-        this.props.navigation.dispatch(goToHome)
         // dont forget to add firebase token to continue with logged in info
     }
     render(){
@@ -45,7 +64,8 @@ class LoginForm extends Component {
             <View style={styles.container} >
                 <View style={{padding: 10, paddingTop: 0, }} ><TextInput
                     style={{width: 250, height: 40, padding:10, borderColor: 'grey', borderWidth: 1}}
-                    onChange={(e) => this.handleEmailChange(e)}
+                    ref= {(input) => { this.emailText = input; }}
+                    onChangeText={(emailText) => this.setState({emailText})}
                     value={emailText}
                     placeholder="Email"
                     keyboardType='email-address'
@@ -56,7 +76,8 @@ class LoginForm extends Component {
                 /></View>
                 <View style={{padding: 10, paddingTop: 0, }} ><TextInput
                     style={{width: 250, height: 40, padding:10, borderColor: 'grey', borderWidth: 1}}
-                    onChange={(e) => this.handlePassChange(e)}
+                    ref= {(input) => { this.pwText = input; }}
+                    onChangeText={(pwText) => this.setState({pwText})}
                     value={pwText}
                     placeholder="Password"
                     secureTextEntry={true}

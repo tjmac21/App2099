@@ -8,15 +8,16 @@ import {
     TouchableOpacity,
 } from 'react-native';
 import { Home, Root, LoginFlow } from './config/router';
+import * as firebase from "firebase";
+// Initialize Firebase
+const FirebaseConfig = firebase.initializeApp({
+    apiKey: 'AIzaSyBbEfdE5anIq9jhTZKQYQQGSlbtkCICpe4',
+    authDomain: 'app2099-ffbce.firebaseapp.com',
+    databaseURL: 'https://app2099-ffbce.firebaseio.com',
+    storageBucket: 'app2099-ffbce.appspot.com',
+ });
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      loggedIn: false,
-    };
-  }
-
   render() {
       return (
             <Root />
