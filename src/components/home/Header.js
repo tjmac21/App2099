@@ -43,7 +43,7 @@ export default class Header extends Component {
                         />
                     }
                 >
-                    <CreateMessage reAnimate={this.state.refreshing}/>
+                    <CreateMessage reAnimate={this.state.refreshing} setModalVisible={this.props.setModalVisible}/>
                 </ScrollView>
             </View>
         );

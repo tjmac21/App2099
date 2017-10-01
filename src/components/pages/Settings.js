@@ -20,9 +20,9 @@ class Settings extends Component {
     }
     setLoggedIn(value) {
         AsyncStorage.setItem('loggedIn', value);
-     }
+    }
     signOut(navigation){
-        firebase.auth().signOut().then(function() {
+        firebase.auth().signOut().then(() => {
             this.setLoggedIn(JSON.stringify(false));
             alert('Signed Out');
             // go to login page
@@ -35,7 +35,6 @@ class Settings extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Button title='Sign Out' onPress={() => this.signOut(this.props.navigation)} />
                 <Button title='Sign Out' onPress={() => this.signOut(this.props.navigation)} />
             </View>
         );

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {
   AsyncStorage,
+  StatusBar,
   Image, 
   StyleSheet,
   View,
@@ -18,14 +19,14 @@ class SplashScreen extends Component {
         super(props);
     }
     isLoggedIn() {
-        AsyncStorage.getItem('loggedIn').then((value) => (JSON.parse(value)) ?  this.props.navigation.dispatch(goToHome) : this.props.navigation.dispatch(goToLogin));
+        AsyncStorage.getItem('loggedIn').then((value) => { if(JSON.parse(value)) {this.props.navigation.dispatch(goToHome)} else {this.props.navigation.dispatch(goToLogin)} });
     }
     render() {
         return (
             <View style={styles.container}>
                 <Image
                     source={require('../../img/favicon.png')}
-                    onLoadStart={() => this.isLoggedIn()}
+                    onLoad={this.isLoggedIn()}
                 />
             </View>
         );

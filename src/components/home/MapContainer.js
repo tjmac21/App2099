@@ -8,16 +8,29 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import Header from './Header';
+import MessageBox from './MessageBox';
 
 class MapContainer extends Component {
   static navigationOptions = {
       header:  null,
   }
+  constructor(){
+    super();
+    this.state = {
+      modalVisible: false,
+    };
+    this.setModalVisible = this.setModalVisible.bind(this);
+  }
+
+  setModalVisible(visible) {
+    this.setState({modalVisible: visible});
+    //swim upstream 
+  }
     render() {
         return (
             <View style ={styles.container}>
               <View style={{position: 'absolute', top: 0, left: 0, right: 0,}}>
-                <Header />
+                <Header setModalVisible={this.setModalVisible} />
               </View>
               <MapView
                 style={styles.map}
@@ -30,6 +43,7 @@ class MapContainer extends Component {
                 zoomEnabled={true}
               >
               </MapView>
+              <MessageBox modalVisible={this.state.modalVisible} setModalVisible={this.setModalVisible} />
             </View>
         );
     }

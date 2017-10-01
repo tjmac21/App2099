@@ -14,14 +14,15 @@ export default class CreateMessage extends Component {
         bounceValue: new Animated.Value(0),
       };
   }
-  handleClick(){
+  handleClick(setModalVis){
+    setModalVis(true);
     this.state.bounceValue.setValue(1);     // Start large
     this.doBounce();
     alert('Make card that slides up for a message');
   }
   render() {
     return (
-        <TouchableOpacity onPress={() => this.handleClick()}>          
+        <TouchableOpacity onPress={() => this.handleClick(this.props.setModalVisible)}>          
             <Animated.Image 
                 source={require('../../img/pencil_icon.png')} 
                 resizeMode='contain'
