@@ -23,11 +23,17 @@ class SplashScreen extends Component {
     }
     render() {
         return (
-            <View style={styles.container}>
-                <Image
-                    source={require('../../img/favicon.png')}
-                    onLoad={this.isLoggedIn()}
+            <View>
+                <StatusBar
+                    backgroundColor="#000"
+                    barStyle="dark-content"
                 />
+                <View style={styles.container}>
+                    <Image
+                        source={require('../../img/favicon.png')}
+                        onLoad={this.isLoggedIn()}
+                    />
+                </View>
             </View>
         );
     }

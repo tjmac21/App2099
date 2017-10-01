@@ -18,7 +18,7 @@ export default class CreateMessage extends Component {
     setModalVis(true);
     this.state.bounceValue.setValue(1);     // Start large
     this.doBounce();
-    alert('Make card that slides up for a message');
+    //alert('Make card that slides up for a message');
   }
   render() {
     return (

@@ -18,7 +18,6 @@ class Animations extends Component {
                 {scale: this.state.bounceValue},  // Map `bounceValue` to `scale`
               ]
             }}
-            onLoad={()=>(AsyncStorage.getItem('loggedIn').then((value) => alert(JSON.parse(value))))}
           />
         );
       }

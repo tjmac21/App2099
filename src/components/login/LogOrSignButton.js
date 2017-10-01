@@ -30,12 +30,12 @@ class LogOrSignButton extends Component {
             var errorMessage = error.message;
             // ...
           });
-          firebase.auth().onAuthStateChanged(function(user) {
+          firebase.auth().onAuthStateChanged((user)=>{
             if (user) {
+              this.setLoggedIn(JSON.stringify(true));
               // User is signed in.
               var isAnonymous = user.isAnonymous;
               var uid = user.uid;
-              setLoggedIn(JSON.stringify(true));
               // ...
             } else {
               // User is signed out.
