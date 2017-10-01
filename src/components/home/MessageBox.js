@@ -9,6 +9,7 @@ import {
   View,
   TouchableHighlight,
 } from 'react-native';
+import * as firebase from "firebase";
 
 export default class MessageBox extends Component {
   constructor(props) {
@@ -18,14 +19,28 @@ export default class MessageBox extends Component {
       }
   }
 
+  dropMessage() {
+      //figure out json structure of each "drop" object
+      // object needs:
+      //    unique id
+      //    user info( need to know who to attribute to) (can set to anon)
+      //    location (long/lat)
+      //    radius it will be visible 
+      //    message
+      //    img?
+      //    life span
+      //    store to firebase db
+
+      this.props.setModalVisible(!this.props.modalVisible);
+  }
+
   render() {
     const { dropText } = this.state;
     return (
         <Modal
             animationType="fade"
             transparent={true}
-            visible={this.props.modalVisible}
-        >
+            visible={this.props.modalVisible}>
             <View style={{
                 flex: 1,
                 flexDirection: 'column',
@@ -51,6 +66,11 @@ export default class MessageBox extends Component {
                     returnKeyType='next'
                     underlineColorAndroid='transparent'
                 />
+                <TouchableHighlight onPress={() => {
+                    this.dropMessage.bind(this)
+                }}>
+                    <Text>Drop</Text>
+                </TouchableHighlight>
                 <TouchableHighlight onPress={() => {
                     this.props.setModalVisible(!this.props.modalVisible)
                 }}>

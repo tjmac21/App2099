@@ -20,7 +20,7 @@ export default class Header extends Component {
       };
     }
     fetchData(){
-        alert('Refresh');
+        alert('Refresh/Get New Data');
         this.setState({refreshing: false});
     }
     _onRefresh() {
