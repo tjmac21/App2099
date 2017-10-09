@@ -1,0 +1,26 @@
+[33m6365ba4[m HEAD@{0}: commit: added ios functionality
+[33mae4503f[m HEAD@{1}: commit: icon change and home page refresh on pull-down integrated
+[33me518119[m HEAD@{2}: commit: Added whole tab navigation, and a few animation examples
+[33me090fb0[m HEAD@{3}: commit: began stack navigation config
+[33ma033854[m HEAD@{4}: commit: logic between screens implented, back button implemented
+[33m0effc18[m HEAD@{5}: checkout: moving from master to LoginScreen
+[33m0effc18[m HEAD@{6}: commit: modified readme and changed android icons
+[33m05f341e[m HEAD@{7}: pull: Fast-forward
+[33m3083b2d[m HEAD@{8}: reset: moving to 3083b2d7
+[33m3083b2d[m HEAD@{9}: commit: added react-native-maps and got cursory test working
+[33mee8497f[m HEAD@{10}: reset: moving to ee8497f
+[33mee8497f[m HEAD@{11}: commit: more prettifying of login/signup
+[33m45657f9[m HEAD@{12}: commit: prettied up login and signup and fbButton
+[33m0f394a9[m HEAD@{13}: commit: login/signup page logic set
+[33m68601f5[m HEAD@{14}: commit: Login W facebook implemented
+[33mff50ee4[m HEAD@{15}: commit: update
+[33m21fa656[m HEAD@{16}: commit: android fb sdk for react native running
+[33m3049d55[m HEAD@{17}: commit: changed index
+[33m386bf1e[m HEAD@{18}: checkout: moving from 386bf1e7a5dec4d026ff962a1666bd0a0693d15a to master
+[33m386bf1e[m HEAD@{19}: checkout: moving from master to 386bf1e
+[33m386bf1e[m HEAD@{20}: reset: moving to 386bf1e
+[33m386bf1e[m HEAD@{21}: commit: added README
+[33m7eca474[m HEAD@{22}: commit: loading screen logic
+[33mf1b513d[m HEAD@{23}: reset: moving to f1b513d
+[33mf1b513d[m HEAD@{24}: reset: moving to f1b513d
+[33mf1b513d[m HEAD@{25}: commit (initial): add project
