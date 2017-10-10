@@ -1,6 +1,7 @@
 import MapView from 'react-native-maps';
 import React, { Component } from 'react';
 import {
+  AsyncStorage,
   Image, 
   StyleSheet,
   View,
@@ -9,6 +10,7 @@ import {
 } from 'react-native';
 import Header from './Header';
 import MessageBox from './MessageBox';
+import { mapStyle } from '../../lib/helpers';
 
 class MapContainer extends Component {
   static navigationOptions = {
@@ -16,12 +18,51 @@ class MapContainer extends Component {
   }
   constructor(){
     super();
+    watchID: (null: ?number);
     this.state = {
       modalVisible: false,
+      initialPosition: 'unknown',
+      lastPosition: 'unknown',
+      latitude: -130,
+      longitude: 24,
     };
     this.setModalVisible = this.setModalVisible.bind(this);
   }
-
+  componentWillMount(){
+    AsyncStorage.getItem('coords')
+    .then( 
+      (coords) => { 
+        this.setState({latitude: JSON.parse(coords.latitude), longitude: JSON.parse(coords.longitude)})
+      }).catch(
+        (error) => {
+            console.log("ERROR BIATCH: " + error);
+        }
+      );
+  }
+  componentDidMount() {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        var initialPosition = JSON.stringify(position);
+        this.setState({
+          initialPosition: initialPosition, 
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude
+        });
+        AsyncStorage.setItem('coords', JSON.stringify(position.coords));
+      },
+      (error) => alert(error.message),
+      {enableHighAccuracy: true}
+    );/*
+    this.watchID = navigator.geolocation.watchPosition((position) => {
+      var lastPosition = JSON.stringify(position);
+      this.setState({ lastPosition });
+      this.setState({latitude: position.coords.latitude});
+      this.setState({longitude: position.coords.latitude});
+    });*/
+  }
+  componentWillUnmount() {
+    navigator.geolocation.clearWatch(this.watchID);
+  }
   setModalVisible(visible) {
     this.setState({modalVisible: visible});
     //swim upstream 
@@ -34,20 +75,37 @@ class MapContainer extends Component {
               </View>
               <MapView
                 style={styles.map}
+                customMapStyle={mapStyle}
                 region={{
-                  latitude: 49.246292,
-                  longitude: -123.116226,
-                  latitudeDelta: 0.199757,
-                  longitudeDelta: 0.099866,
+                  latitude: this.state.latitude,
+                  longitude: this.state.longitude,
+                  latitudeDelta: 0.049757,
+                  longitudeDelta: 0.004666,
                 }}
                 zoomEnabled={true}
+                showsUserLocation={true}
+                followsUserLocation={true}
+                showsPointOfInterest={false}
               >
+                <MapView.Circle 
+                  center= {{
+                    latitude: this.state.latitude,
+                    longitude: this.state.longitude,
+                  }}
+                  radius={1750} 
+                  strokeWidth={1} 
+                  strokeColor='rgba(143, 29, 33, 0.6)'
+                  fillColor='rgba(143, 29, 33, 0.1)'
+                />
               </MapView>
+              {/*<View style={styles.overlay}>
+                <View style={styles.circle}/>
+              </View>*/}
               <MessageBox modalVisible={this.state.modalVisible} setModalVisible={this.setModalVisible} />
             </View>
         );
     }
-}
+} 
 
 const styles = StyleSheet.create({
     container: {
@@ -57,7 +115,7 @@ const styles = StyleSheet.create({
       right: 0,
       bottom: 0,
       alignSelf: 'flex-end',
-      backgroundColor: '#8F1D21',
+      //backgroundColor: '#8F1D21',
     },
     map: {
       position: 'absolute',
@@ -66,6 +124,23 @@ const styles = StyleSheet.create({
       right: 0,
       bottom: 0,
     },
+    overlay: {
+      backgroundColor: 'rgba(143, 29, 33, 0.6)',
+      position: 'absolute',
+      top: 40,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    circle: {
+      backgroundColor: 'black',
+      borderRadius: 200,
+      alignSelf: 'stretch',
+      flex: 1,
+      margin: 50,
+    }
   });
 
 export default MapContainer;

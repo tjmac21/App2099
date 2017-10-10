@@ -29,17 +29,21 @@ class SignupForm extends Component {
     signup() {
             try {
                 firebase.auth()
-                    .createUserWithEmailAndPassword(this.state.emailText, this.state.pwText).then( () => {
+                    .createUserWithEmailAndPassword(this.state.emailText, this.state.pwText)
+                    .then( () => {
                         this.setLoggedIn(JSON.stringify(true));
                         console.log("Logged In!");
                         this.props.navigation.dispatch(goToHome);
+                    }).catch( 
+                        (error) => {
+                            alert("ERROR BIATCH: " + error);
+                            this.setState({error});
                     });
         
             } catch (error) {
                 console.log(error.toString());
                 this.setState({error});
-            }
-        
+            } 
     }
 
     render(){

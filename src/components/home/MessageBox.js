@@ -7,7 +7,8 @@ import {
   Image, 
   StyleSheet,
   View,
-  TouchableHighlight,
+  TouchableOpacity,
+  Button,
 } from 'react-native';
 import * as firebase from "firebase";
 
@@ -30,7 +31,7 @@ export default class MessageBox extends Component {
       //    img?
       //    life span
       //    store to firebase db
-
+      // open another modal (for sending msg and sent msg)
       this.props.setModalVisible(!this.props.modalVisible);
   }
 
@@ -40,45 +41,47 @@ export default class MessageBox extends Component {
         <Modal
             animationType="fade"
             transparent={true}
-            visible={this.props.modalVisible}>
-            <View style={{
+            visible={this.props.modalVisible}
+            onRequestClose={() => {this.props.setModalVisible(!this.props.modalVisible)}}>
+            <TouchableOpacity onPress={() => {this.props.setModalVisible(!this.props.modalVisible)}} style={{
                 flex: 1,
                 flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
                 backgroundColor: '#00000080'}}>
-            <View style={{
-                    width: 300,
-                    height: 300,
-                    backgroundColor: '#fff', 
-                    padding: 20,
-                    borderRadius: 30,
-                }}>
-                <Text>Drop a message!</Text>
-                <TextInput 
-                    style={{width: 250, height: 200, padding:20, borderColor: 'grey', borderWidth: 1}}
-                    ref= {(input) => { this.dropText = input; }}
-                    onChangeText={(dropText) => this.setState({dropText})}
-                    value={dropText}
-                    placeholder=""
-                    clearButtonMode='unless-editing'
-                    enablesReturnKeyAutomatically={true}
-                    returnKeyType='next'
-                    underlineColorAndroid='transparent'
-                />
-                <TouchableHighlight onPress={() => {
-                    this.dropMessage.bind(this)
-                }}>
-                    <Text>Drop</Text>
-                </TouchableHighlight>
-                <TouchableHighlight onPress={() => {
-                    this.props.setModalVisible(!this.props.modalVisible)
-                }}>
-                    <Text>Cancel</Text>
-                </TouchableHighlight>
-
+            </TouchableOpacity>
+            <View style={{position: 'absolute'}}>
+                <View style={{padding: 20, flexDirection: 'row',alignItems: 'flex-end', justifyContent: 'flex-end' }}>
+                    <View style={{ width: 60,}}>
+                        <Button 
+                            title="Drop"
+                            onPress={this.dropMessage.bind(this)} />
+                    </View>
+                </View>
+                <View style={{padding: 20}}>
+                    <View style={{
+                            backgroundColor: '#fff',
+                            borderRadius: 30,
+                            padding: 10,
+                            alignItems: 'center',
+                        }}>
+                        <View style={{alignItems:'flex-start', flexDirection: 'row', justifyContent:'flex-start'}}>
+                            <TextInput 
+                                style={{width:350,borderColor: 'grey', borderWidth: 1, borderRadius: 20,textAlignVertical: 'top'}}
+                                ref= {(input) => { this.dropText = input; }}
+                                onChangeText={(dropText) => this.setState({dropText})}
+                                value={dropText}
+                                multiline={true}
+                                numberOfLines = {10}
+                                maxLength = {300}
+                                placeholder="Drop a message..."
+                                clearButtonMode='unless-editing'
+                                enablesReturnKeyAutomatically={true}
+                                returnKeyType='send'
+                                underlineColorAndroid='transparent'
+                            />
+                        </View>
+                    </View>
+                </View>
             </View>
-        </View>
       </Modal>
     );
   }

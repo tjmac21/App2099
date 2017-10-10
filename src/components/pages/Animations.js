@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { AsyncStorage, View, Animated, TouchableOpacity, Text, StyleSheet } from 'react-native'
+import React, { Component } from 'react';
+import { View, Animated, TouchableOpacity, Text, StyleSheet } from 'react-native';
 
 class Animations extends Component {
     constructor(props) {
@@ -10,15 +10,17 @@ class Animations extends Component {
       }
       render() {
         return (
-          <Animated.Image                         // Base: Image, Text, View
-            source={{uri: 'http://i.imgur.com/XMKOH81.jpg'}}
-            style={{
-              flex: 1,
-              transform: [                        // `transform` is an ordered array
-                {scale: this.state.bounceValue},  // Map `bounceValue` to `scale`
-              ]
-            }}
-          />
+          <View>
+            <Animated.Image                         // Base: Image, Text, View
+              source={{uri: 'http://i.imgur.com/XMKOH81.jpg'}}
+              style={{
+                flex: 1,
+                transform: [                        // `transform` is an ordered array
+                  {scale: this.state.bounceValue},  // Map `bounceValue` to `scale`
+                ]
+              }}
+            />
+          </View>
         );
       }
       componentDidMount() {

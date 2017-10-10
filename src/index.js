@@ -7,7 +7,7 @@ import {
     View,
     TouchableOpacity,
 } from 'react-native';
-import { Home, Root, LoginFlow } from './config/router';
+import { Root  } from './config/router';
 import * as firebase from "firebase";
 // Initialize Firebase
 const FirebaseConfig = firebase.initializeApp({

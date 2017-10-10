@@ -42,11 +42,17 @@ class LoginForm extends Component {
     goHome(){
         try {
             firebase.auth()
-                .signInWithEmailAndPassword(this.state.emailText, this.state.pwText).then( () => {
-                    this.setLoggedIn(JSON.stringify(true));
-                    console.log("Logged In!");
-                    this.props.navigation.dispatch(goToHome);
-                });
+                .signInWithEmailAndPassword(this.state.emailText, this.state.pwText)
+                .then( 
+                    () => {
+                        this.setLoggedIn(JSON.stringify(true));
+                        console.log("Logged In!");
+                        this.props.navigation.dispatch(goToHome);
+                    })
+                .catch( 
+                    (error) => {
+                        alert("ERROR BIATCH: " + error);
+                    });
             
     
     
