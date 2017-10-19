@@ -8,30 +8,33 @@ import {
 } from 'react-native';
 import FBSDK, { LoginManager, AccessToken } from 'react-native-fbsdk';
 import * as firebase from "firebase";
+import { goToHome } from '../../config/router';
 
 class FbLoginButton extends Component {
   constructor(props) {
     super();
+    this._fbAuth = this._fbAuth.bind(this);
   }
   
-  _fbAuth() {    
-    LoginManager.logInWithReadPermissions(['public_profile', 'email','user_friends']).then(
+  _fbAuth(navi) {    
+    LoginManager.logInWithReadPermissions(['user_about_me','public_profile', 'email','user_friends','user_photos']).then(
       function(result) {
         if (result.isCancelled) {
           alert('Login was cancelled');
         } else {
           AccessToken.getCurrentAccessToken().then((accesTokenData) => {
-            const credential = firebase.auth.FacebookAuthProvider.credential(accesTokenData.accessToken)
+            const credential = firebase.auth.FacebookAuthProvider.credential(accesTokenData.accessToken);
             firebase.auth().signInWithCredential(credential).then((result) => {
               // promise was success
-              this.setLoggedIn(JSON.stringify(true));
+              AsyncStorage.setItem('loggedIn', JSON.stringify(true));
             }, (error) => {
               //promise ws reject
               alert(error);
-            })
+            });
+            navi.dispatch(goToHome);
           }, (error) => {
             alert('Some error occured : ' + error);
-          })
+          });
         }
       }, function(error) {
         alert('An error occured: ' + error);
@@ -39,15 +42,11 @@ class FbLoginButton extends Component {
       //send to home page
     }
 
-  setLoggedIn(value) {
-      AsyncStorage.setItem('loggedIn', value);
-    }
-
   render() {
     return (
       <View style={styles.container}>
         <Button
-          onPress={this._fbAuth}
+          onPress={() => this._fbAuth(this.props.navigation)}
           title={`${this.props.LogOrSign} With Facebook`}
           color="#4267B2"
         />

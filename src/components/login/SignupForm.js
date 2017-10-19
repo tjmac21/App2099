@@ -90,7 +90,7 @@ class SignupForm extends Component {
                     accessibilityLabel="Tap to log in"
                     onPress={this.signup.bind(this)}
                 /></View>
-                <FbLoginButton LogOrSign={'Sign Up'}/>
+                <FbLoginButton LogOrSign={'Sign Up'}  navigation={this.props.navigation}/>
             </View>
         );
     }

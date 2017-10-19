@@ -99,7 +99,7 @@ class LoginForm extends Component {
                     onPress={this.goHome.bind(this)}
                 />{/*send to homescreen onPress*/}</View>
                 <View style={{padding: 10, paddingTop: 0, }} ><Text>OR</Text></View>
-                <FbLoginButton LogOrSign={'Log In'}/>
+                <FbLoginButton LogOrSign={'Log In'} navigation={this.props.navigation}/>
                 <View style={{padding: 60}} ><TouchableOpacity onPress={this.forgotPassword.bind(this)}>{/*onPress=send to new form*/}
                     <Text>Forgot password?</Text>
                 </TouchableOpacity></View>
